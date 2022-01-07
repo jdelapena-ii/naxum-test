@@ -25,18 +25,31 @@ function App() {
             Become a B.a.n.k Trainer
           </div>
 
-          <div className="lg:flex justify-between items-center xl:space-x-10">
-            <div>
-              <p>Register for the webinar</p>
-              <p>Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
-              <p>Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
+          <div className="lg:flex justify-between items-center xl:space-x-10 xl:mt-20">
+            <div className="lg:w-1/2 xl:pl-32 xl:pr-16">
+              <div className="break-all">
+                <p className="xl:text-3xl font-bold">Register for the webinar</p>
+                <p>Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
+                <p>Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
+              </div>
             </div>
 
-            <div>
-              <p>Register for the webinar</p>
-              <p>Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
-              <p>Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
+            <div className="lg:w-1/2">
+              <div>
+                <img src={headlogo} alt="logo" />
+
+              </div>
+
+              <div>
+                <button className="bg-red-700 text-white uppercase px-16 rounded-sm py-4">
+                  Register Now
+                </button>
+              </div>
+              <div className="text-sm">
+                *See our last live session on demand instantly
+              </div>
             </div>
+
           </div>
         </div>
         {/* end image content overlay */}
