@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import headlogo from './assets/head-logo.png'
 import mainlogo from './assets/main-logo.png'
 import banner from './assets/banner.jpg'
@@ -8,8 +8,32 @@ import twittter from './assets/twit.png'
 import youtube from './assets/yt.png'
 import linkedin from './assets/in.png'
 import profile from './assets/profile.jpg'
+import {
+  Text,
+  Input,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
 
 function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [firstName, firstNameSet] = useState('');
+  const [lastName, lastNameSet] = useState('');
+  const [email, emailSet] = useState('');
+  const [mobile, mobileSet] = useState('');
+
+  const firstNameHandler = (event) => firstNameSet(event.target.value);
+  const lastNameHandler = (event) => lastNameSet(event.target.value);
+  const emailHandler = (event) => emailSet(event.target.value);
+  const mobileHandler = (event) => mobileSet(event.target.value);
+
   return (
    <Fragment>
     <nav className="bg-gray-700 h-16 w-full">
@@ -27,7 +51,7 @@ function App() {
         {/* image content overlay */}
         <div className="absolute top-24 lg:top-1/3 w-full">
 
-          <div className="bg-black h-14 lg:h-20 w-full  text-white flex justify-center items-center text-2xl lg:text-4xl xl:text-5xl uppercase">
+          <div className="bg-black h-14 lg:h-20 w-full font-bold text-white flex justify-center items-center text-2xl lg:text-4xl xl:text-5xl uppercase">
             Become a B.a.n.k Trainer
           </div>
 
@@ -35,8 +59,8 @@ function App() {
             <div className="lg:w-1/2 lg:pl-24 xl:pl-40 lg:pr-6 xl:pr-10">
               <div className="break-words">
                 <p className="lg:text-2xl xl:text-4xl font-bold uppercase xl:mb-4">Register for the webinar</p>
-                <p className="xl:text-lg">Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
-                <p className="xl:text-lg">Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
+                <p className="xl:text-lg font-semibold">Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
+                <p className="xl:text-lg font-semibold">Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
               </div>
             </div>
 
@@ -46,11 +70,65 @@ function App() {
               </div>
 
               <div>
-                <button className="bg-red-700 text-white uppercase px-24 rounded-sm py-5 mb-3 text-xl">
+                <Button onClick={onOpen} colorScheme='blue-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
                   Register Now
-                </button>
+                </Button>
+                <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                  <ModalContent>
+
+                    <ModalHeader>Register Now</ModalHeader>
+
+                    <ModalCloseButton />
+
+                    <ModalBody>
+                    <Text mt='14px' mb='4px'>First Name:</Text>
+                    <Input
+                      value={firstName}
+                      onChange={firstNameHandler}
+                      placeholder='Enter your first name'
+                      size='sm'
+                      isRequired
+                    />
+
+                    <Text mt='14px' mb='4px'>Last Name:</Text>
+                    <Input
+                      value={lastName}
+                      onChange={lastNameHandler}
+                      placeholder='Enter your last name'
+                      size='sm'
+                      isRequired
+                    />
+
+                    <Text mt='14px' mb='4px'>Email:</Text>
+                    <Input
+                      value={email}
+                      onChange={emailHandler}
+                      placeholder='Enter your email'
+                      size='sm'
+                      isRequired
+                    />
+
+                    <Text mt='14px' mb='4px'>Phone Number:</Text>
+                    <Input
+                      value={mobile}
+                      onChange={mobileHandler}
+                      placeholder='Enter your phone number'
+                      size='sm'
+                      isRequired
+                    />
+
+                    </ModalBody>
+
+                    <ModalFooter>
+                      <Button variant='solid' colorScheme='teal'>Submit</Button>
+                    </ModalFooter>
+
+                  </ModalContent>
+                </Modal>
               </div>
-              <div className="text-sm">
+
+              <div className="text-sm font-semibold">
                 *See our last live session on demand instantly
               </div>
             </div>
@@ -65,8 +143,8 @@ function App() {
       <div className="lg:hidden px-6 md:px-12 md:mt-6">
         <div className="break-words">
           <p className="text-xl font-bold uppercase my-2">Register for the webinar</p>
-          <p>Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
-          <p>Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
+          <p className="mb-2">Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
+          <p className="">Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
         </div>
       </div>
 
@@ -75,12 +153,65 @@ function App() {
           <img src={mainlogo} alt="logo" />
         </div>
 
-        <div>
-          <button className="bg-red-700 text-white uppercase px-24 rounded-sm py-5 mb-3 text-lg">
+        <div className="grid justify-center">
+          <Button onClick={onOpen} colorScheme='red-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
             Register Now
-          </button>
+          </Button>
+          <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+            <ModalContent>
+
+              <ModalHeader>Register Now</ModalHeader>
+
+              <ModalCloseButton />
+
+              <ModalBody>
+              <Text mt='14px' mb='4px'>First Name:</Text>
+              <Input
+                value={firstName}
+                onChange={firstNameHandler}
+                placeholder='Enter your first name'
+                size='sm'
+                isRequired
+              />
+
+              <Text mt='14px' mb='4px'>Last Name:</Text>
+              <Input
+                value={lastName}
+                onChange={lastNameHandler}
+                placeholder='Enter your last name'
+                size='sm'
+                isRequired
+              />
+
+              <Text mt='14px' mb='4px'>Email:</Text>
+              <Input
+                value={email}
+                onChange={emailHandler}
+                placeholder='Enter your email'
+                size='sm'
+                isRequired
+              />
+
+              <Text mt='14px' mb='4px'>Phone Number:</Text>
+              <Input
+                value={mobile}
+                onChange={mobileHandler}
+                placeholder='Enter your phone number'
+                size='sm'
+                isRequired
+              />
+
+              </ModalBody>
+
+              <ModalFooter>
+                <Button variant='solid' colorScheme='teal'>Submit</Button>
+              </ModalFooter>
+
+            </ModalContent>
+          </Modal>
         </div>
-        <div className="text-sm">
+        <div className="text-sm grid justify-center">
           *See our last live session on demand instantly
         </div>
       </div>
@@ -91,7 +222,8 @@ function App() {
         <div className="lg:w-1/2 lg:pl-16 lg:pr-6">
           <div className="break-words">
             <p className="lg:text-3xl font-bold uppercase lg:mb-4">Register for the webinar</p>
-            <p className="lg:text-xl mb-4">Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
+            <p className="lg:text-xl">Learn how to launch your own B.A.N.K business by helping others communicate and sell more effectively as a Certified and Licensed B.A.N.K Trainer during our webinar.</p>
+            <br/>
             <p className="lg:text-xl">Register today to hear why professionals just like you have chosen to get certified and licensed to train B.A.N.K</p>
           </div>
         </div>
@@ -102,9 +234,62 @@ function App() {
           </div>
 
           <div>
-            <button className="bg-red-700 text-white uppercase px-24 rounded-sm py-5 mb-3 text-xl">
+            <Button onClick={onOpen} colorScheme='red-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
               Register Now
-            </button>
+            </Button>
+            <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+              <ModalContent>
+
+                <ModalHeader>Register Now</ModalHeader>
+
+                <ModalCloseButton />
+
+                <ModalBody>
+                <Text mt='14px' mb='4px'>First Name:</Text>
+                <Input
+                  value={firstName}
+                  onChange={firstNameHandler}
+                  placeholder='Enter your first name'
+                  size='sm'
+                  isRequired
+                />
+
+                <Text mt='14px' mb='4px'>Last Name:</Text>
+                <Input
+                  value={lastName}
+                  onChange={lastNameHandler}
+                  placeholder='Enter your last name'
+                  size='sm'
+                  isRequired
+                />
+
+                <Text mt='14px' mb='4px'>Email:</Text>
+                <Input
+                  value={email}
+                  onChange={emailHandler}
+                  placeholder='Enter your email'
+                  size='sm'
+                  isRequired
+                />
+
+                <Text mt='14px' mb='4px'>Phone Number:</Text>
+                <Input
+                  value={mobile}
+                  onChange={mobileHandler}
+                  placeholder='Enter your phone number'
+                  size='sm'
+                  isRequired
+                />
+
+                </ModalBody>
+
+                <ModalFooter>
+                  <Button variant='solid' colorScheme='teal'>Submit</Button>
+                </ModalFooter>
+
+              </ModalContent>
+            </Modal>
           </div>
           <div className="text-base">
             *See our last live session on demand instantly
