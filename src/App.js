@@ -1,11 +1,10 @@
-
-import './App.css';
+import { Fragment } from 'react';
 import headlogo from './assets/head-logo.png'
 import banner from './assets/banner.jpg'
 
 function App() {
   return (
-   <>
+   <Fragment>
     <nav className="bg-gray-600 h-10 w-full">
       <div>
         <img src={headlogo}  alt="head-logo" />
@@ -13,7 +12,7 @@ function App() {
     </nav>
 
 
-    <body classsName="w-full">
+    <main className="w-full">
       <div className="relative">
         {/* bg image */}
         <img className="relative w-full" src={banner} alt="banner"/>
@@ -55,12 +54,12 @@ function App() {
         {/* end image content overlay */}
   
       </div>
-    </body>
+    </main>
 
 
 
     <footer className="h-24 w-full"></footer>
-   </>
+  </Fragment>
   );
 }
 
