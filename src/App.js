@@ -4,7 +4,7 @@ import mainlogo from './assets/main-logo.png'
 import banner from './assets/banner.jpg'
 import facebook from './assets/fb.png'
 import instagram from './assets/ig.png'
-import twittter from './assets/twit.png'
+import twitter from './assets/twit.png'
 import youtube from './assets/yt.png'
 import linkedin from './assets/in.png'
 import profile from './assets/profile.jpg'
@@ -38,7 +38,7 @@ function App() {
    <Fragment>
     <nav className="bg-gray-700 h-16 w-full">
       <div className="ml-8 md:ml-24 lg:ml-32 pt-3">
-        <img src={headlogo}  alt="head-logo" />
+        <img src={headlogo}  alt="head-logo" className="cursor-pointer" />
       </div>
     </nav>
 
@@ -73,7 +73,7 @@ function App() {
                 <Button onClick={onOpen} colorScheme='blue-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
                   Register Now
                 </Button>
-                <Modal isOpen={isOpen} onClose={onClose}>
+                <Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
                 <ModalOverlay />
                   <ModalContent>
 
@@ -157,7 +157,7 @@ function App() {
           <Button onClick={onOpen} colorScheme='red-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
             Register Now
           </Button>
-          <Modal isOpen={isOpen} onClose={onClose}>
+          <Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
           <ModalOverlay />
             <ModalContent>
 
@@ -237,7 +237,7 @@ function App() {
             <Button onClick={onOpen} colorScheme='red-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
               Register Now
             </Button>
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
             <ModalOverlay />
               <ModalContent>
 
@@ -303,14 +303,14 @@ function App() {
           <div className="flex justify-center items-start mb-4 text-xl font-semibold">FOLLOW B.A.N.K</div>
 
           <div className="flex justify-center space-x-2 md:space-x-5 lg:space-x-8 items-center">
-            <div><img src={facebook} alt="fb-icon"/></div>
-            <div><img src={twittter} alt="twit-icon"/></div>
-            <div><img src={linkedin} alt="in-icon"/></div>
-            <div><img src={youtube} alt="yt-icon"/></div>
+            <div><a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><img src={facebook} alt="fb-icon"/></a></div>
+            <div><a href="https://twitter.com/" target="_blank" rel="noreferrer"><img src={twitter} alt="twit-icon"/></a></div>
+            <div><a href="https://linkedin.com/" target="_blank" rel="noreferrer"><img src={linkedin} alt="in-icon"/></a></div>
+            <div><a href="https://youtube.com/" target="_blank" rel="noreferrer"><img src={youtube} alt="yt-icon"/></a></div>
           </div>
 
           <div className="lg:flex items-center justify-center mt-4">
-            <div className="px-6 xl:px-0 text-center">BANKCODE.COM <span className="text-pink-600 mx-1 xl:mx-3">|</span> INFO@BANKCODE.COM <span className="text-pink-600 mx-1 xl:mx-3">|</span>  702-342-0742</div> 
+            <div className="px-6 xl:px-0 text-center"><a href="https://my.bankcode.com/" target="_blank" rel="noreferrer">BANKCODE.COM</a> <span className="text-pink-600 mx-1 xl:mx-3">|</span><a href="mailto: esther@bankcode.com">INFO@BANKCODE.COM</a> <span className="text-pink-600 mx-1 xl:mx-3">|</span><a href="tel:702-342-0742">702-342-0742</a></div> 
           </div>
         </div>
 
@@ -325,15 +325,15 @@ function App() {
             <div>
               <div>
                 <p>ESTHER WILDENBERG</p>
-                <p>BANKCODE.COM/ESTHER</p>
-                <p>ESTERHER@BANKCODE.COM</p>
-                <p>702-342-0742</p>
+                <p><a href="https://my.bankcode.com/esther" target="_blank" rel="noreferrer">BANKCODE.COM/ESTHER</a></p>
+                <p><a href="mailto: esther@bankcode.com">ESTERHER@BANKCODE.COM</a></p>
+                <p><a href="tel:702-342-0742">702-342-0742</a></p>
               </div>
               <div className="flex justify-center items-center mt-2 space-x-2 md:space-x-5 lg:space-x-8">
-                <div><img src={facebook} alt="fb-icon"/></div>
-                <div><img src={twittter} alt="twit-icon"/></div>
-                <div><img src={linkedin} alt="in-icon"/></div>
-                <div><img src={instagram} alt="yt-icon"/></div>
+              <div><a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><img src={facebook} alt="fb-icon"/></a></div>
+            <div><a href="https://twitter.com/" target="_blank" rel="noreferrer"><img src={twitter} alt="twit-icon"/></a></div>
+            <div><a href="https://linkedin.com/" target="_blank" rel="noreferrer"><img src={linkedin} alt="in-icon"/></a></div>
+            <div><a href="https://instagrams.com/" target="_blank" rel="noreferrer"><img src={instagram} alt="ig-icon"/></a></div>
               </div>
             </div>
           </div>
