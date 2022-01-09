@@ -21,18 +21,12 @@ import {
   ModalCloseButton,
 } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
+// import RegisterForm from './components/RegisterForm';
+import Register2 from './components/Register2';
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [firstName, firstNameSet] = useState('');
-  const [lastName, lastNameSet] = useState('');
-  const [email, emailSet] = useState('');
-  const [mobile, mobileSet] = useState('');
-
-  const firstNameHandler = (event) => firstNameSet(event.target.value);
-  const lastNameHandler = (event) => lastNameSet(event.target.value);
-  const emailHandler = (event) => emailSet(event.target.value);
-  const mobileHandler = (event) => mobileSet(event.target.value);
+ 
 
   return (
    <Fragment>
@@ -73,59 +67,6 @@ function App() {
                 <Button onClick={onOpen} colorScheme='blue-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
                   Register Now
                 </Button>
-                <Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
-                <ModalOverlay />
-                  <ModalContent>
-
-                    <ModalHeader>Register Now</ModalHeader>
-
-                    <ModalCloseButton />
-
-                    <ModalBody>
-                    <Text mt='14px' mb='4px'>First Name:</Text>
-                    <Input
-                      value={firstName}
-                      onChange={firstNameHandler}
-                      placeholder='Enter your first name'
-                      size='sm'
-                      isRequired
-                    />
-
-                    <Text mt='14px' mb='4px'>Last Name:</Text>
-                    <Input
-                      value={lastName}
-                      onChange={lastNameHandler}
-                      placeholder='Enter your last name'
-                      size='sm'
-                      isRequired
-                    />
-
-                    <Text mt='14px' mb='4px'>Email:</Text>
-                    <Input
-                      value={email}
-                      onChange={emailHandler}
-                      placeholder='Enter your email'
-                      size='sm'
-                      isRequired
-                    />
-
-                    <Text mt='14px' mb='4px'>Phone Number:</Text>
-                    <Input
-                      value={mobile}
-                      onChange={mobileHandler}
-                      placeholder='Enter your phone number'
-                      size='sm'
-                      isRequired
-                    />
-
-                    </ModalBody>
-
-                    <ModalFooter>
-                      <Button variant='solid' colorScheme='teal'>Submit</Button>
-                    </ModalFooter>
-
-                  </ModalContent>
-                </Modal>
               </div>
 
               <div className="text-sm font-semibold">
@@ -157,59 +98,6 @@ function App() {
           <Button onClick={onOpen} colorScheme='red-700' borderRadius='3px' px={20} py={6}  className="bg-red-700 text-white uppercase mb-3 text-xl">
             Register Now
           </Button>
-          <Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
-          <ModalOverlay />
-            <ModalContent>
-
-              <ModalHeader>Register Now</ModalHeader>
-
-              <ModalCloseButton />
-
-              <ModalBody>
-              <Text mt='14px' mb='4px'>First Name:</Text>
-              <Input
-                value={firstName}
-                onChange={firstNameHandler}
-                placeholder='Enter your first name'
-                size='sm'
-                isRequired
-              />
-
-              <Text mt='14px' mb='4px'>Last Name:</Text>
-              <Input
-                value={lastName}
-                onChange={lastNameHandler}
-                placeholder='Enter your last name'
-                size='sm'
-                isRequired
-              />
-
-              <Text mt='14px' mb='4px'>Email:</Text>
-              <Input
-                value={email}
-                onChange={emailHandler}
-                placeholder='Enter your email'
-                size='sm'
-                isRequired
-              />
-
-              <Text mt='14px' mb='4px'>Phone Number:</Text>
-              <Input
-                value={mobile}
-                onChange={mobileHandler}
-                placeholder='Enter your phone number'
-                size='sm'
-                isRequired
-              />
-
-              </ModalBody>
-
-              <ModalFooter>
-                <Button variant='solid' colorScheme='teal'>Submit</Button>
-              </ModalFooter>
-
-            </ModalContent>
-          </Modal>
         </div>
         <div className="text-sm grid justify-center">
           *See our last live session on demand instantly
@@ -246,47 +134,8 @@ function App() {
                 <ModalCloseButton />
 
                 <ModalBody>
-                <Text mt='14px' mb='4px'>First Name:</Text>
-                <Input
-                  value={firstName}
-                  onChange={firstNameHandler}
-                  placeholder='Enter your first name'
-                  size='sm'
-                  isRequired
-                />
-
-                <Text mt='14px' mb='4px'>Last Name:</Text>
-                <Input
-                  value={lastName}
-                  onChange={lastNameHandler}
-                  placeholder='Enter your last name'
-                  size='sm'
-                  isRequired
-                />
-
-                <Text mt='14px' mb='4px'>Email:</Text>
-                <Input
-                  value={email}
-                  onChange={emailHandler}
-                  placeholder='Enter your email'
-                  size='sm'
-                  isRequired
-                />
-
-                <Text mt='14px' mb='4px'>Phone Number:</Text>
-                <Input
-                  value={mobile}
-                  onChange={mobileHandler}
-                  placeholder='Enter your phone number'
-                  size='sm'
-                  isRequired
-                />
-
+                    <Register2 />
                 </ModalBody>
-
-                <ModalFooter>
-                  <Button variant='solid' colorScheme='teal'>Submit</Button>
-                </ModalFooter>
 
               </ModalContent>
             </Modal>
