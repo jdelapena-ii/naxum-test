@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import headlogo from './assets/head-logo.png'
 import mainlogo from './assets/main-logo.png'
 import banner from './assets/banner.jpg'
@@ -9,14 +9,11 @@ import youtube from './assets/yt.png'
 import linkedin from './assets/in.png'
 import profile from './assets/profile.jpg'
 import {
-  Text,
-  Input,
   Button,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
