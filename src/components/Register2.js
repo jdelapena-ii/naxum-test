@@ -49,7 +49,7 @@ function Register2() {
 
     function mobileHandleChange(event) {
         const mobilevalue = event.target.value;
-        if (!mobilevalue.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) setMobileError("Please input a valid mobile number.");
+        if (!mobilevalue.match(/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im)) setMobileError("Please input a valid mobile number.");
         else setMobileError(null);
         setMobile(mobilevalue);
     }
