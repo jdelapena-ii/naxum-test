@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormControl, FormLabel, Text, Input, Button } from '@chakra-ui/react'
 
-function Register2() {
+function RegisterForm() {
     const [firstname, setFirstname] = React.useState("");
     const [firsterror, setFirstError] = React.useState(null);
 
@@ -139,4 +139,4 @@ function Register2() {
   }
 
 
-export default Register2
+export default RegisterForm

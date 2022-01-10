@@ -18,8 +18,7 @@ import {
   ModalCloseButton,
 } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
-// import RegisterForm from './components/RegisterForm';
-import Register2 from './components/Register2';
+import RegisterForm from './components/RegisterForm';
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -131,7 +130,7 @@ function App() {
                 <ModalCloseButton />
 
                 <ModalBody>
-                    <Register2 />
+                    <RegisterForm />
                 </ModalBody>
 
               </ModalContent>
